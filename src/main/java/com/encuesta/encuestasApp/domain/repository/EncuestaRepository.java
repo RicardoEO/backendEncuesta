@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class EncuestaRepository {
@@ -17,6 +18,11 @@ public class EncuestaRepository {
 
     public Encuesta guardarEncuesta(Encuesta encuesta) {
         return encuestaDAO.save(encuesta);
+    }
+
+    public Optional<Encuesta> getByCorreo(String correo) {
+        Optional<Encuesta> encuesta = encuestaDAO.findByCorreo(correo);
+        return encuesta;
     }
 
     public List<CountByEstilos> getCountByEstilos() {
