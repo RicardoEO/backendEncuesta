@@ -22,7 +22,7 @@ public class EncuestaController {
     private EncuestaService encuestaService;
 
     @PostMapping("/save")
-    public ResponseEntity<Object> save(@RequestBody Encuesta encuesta) throws Exception {
+    public ResponseEntity<Encuesta> save(@RequestBody Encuesta encuesta) throws Exception {
         return new ResponseEntity<>(encuestaService.guardarEncuesta(encuesta), HttpStatus.CREATED);
     }
 

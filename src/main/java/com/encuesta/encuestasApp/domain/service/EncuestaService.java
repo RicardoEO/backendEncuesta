@@ -17,7 +17,7 @@ public class EncuestaService {
     @Autowired
     private EncuestaRepository encuestaRepository;
 
-    public Object guardarEncuesta(Encuesta encuesta) throws Exception {
+    public Encuesta guardarEncuesta(Encuesta encuesta) throws Exception {
         String correo = encuesta.getCorreo();
         Optional<Encuesta> existeCorreo = this.getByCorreo(correo);
 
